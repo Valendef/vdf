@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Menú | Café</title>
+  <meta name="description" content="Menú virtual por QR" />
+
+  <!-- Tipos: podés reemplazar por Google Fonts si querés -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Display retro + una mono para detalles -->
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Top bar -->
+  <header class="topbar">
+    <div class="topbar__inner">
+      <div class="brand">
+        <span class="brand__dot" aria-hidden="true"></span>
+        <span class="brand__name">Café</span>
+      </div>
+
+      <a class="pill" href="#menu" aria-label="Ir al menú">MENÚ</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main>
+    <section class="hero" id="home">
+      <div class="hero__grid">
+        <div class="hero__left">
+          <p class="kicker">MENÚ POR QR</p>
+          <h1 class="hero__title">
+            <span class="hero__titleLine">COFFEE</span>
+            <span class="hero__titleLine accent">MENU.</span>
+          </h1>
+          <p class="hero__sub">
+            Bebidas, pastelería y opciones saladas. <br />
+            Precios en ARS.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn" href="#menu">VER MENÚ</a>
+            <button class="btn btn--ghost" id="btnExpandAll" type="button">ABRIR TODO</button>
+          </div>
+
+          <div class="hero__note">
+            <span class="dot"></span>
+            <span>Tip: usá el buscador para encontrar rápido.</span>
+          </div>
+        </div>
+
+        <div class="hero__right">
+          <div class="poster">
+            <div class="poster__header">
+              <span class="poster__tag">HOY</span>
+              <span class="poster__tag">FRESCO</span>
+              <span class="poster__tag">HECHO EN CASA</span>
+            </div>
+
+            <div class="poster__body">
+              <p class="poster__kicker">RECOMENDADO</p>
+              <h2 class="poster__title">Combo merienda</h2>
+              <p class="poster__desc">Latte + Muffin</p>
+              <div class="poster__price">$4.200</div>
+              <div class="poster__footer">
+                <span class="tiny">Consultá por leches vegetales y sabores extra.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sticky nav + search -->
+    <section class="navwrap" id="menu">
+      <div class="navwrap__inner">
+        <nav class="tabs" aria-label="Secciones del menú">
+          <a class="tab" href="#calientes">Calientes</a>
+          <a class="tab" href="#frias">Frías</a>
+          <a class="tab" href="#pasteleria">Pastelería</a>
+          <a class="tab" href="#saladas">Saladas</a>
+          <a class="tab" href="#extras">Extras</a>
+        </nav>
+
+        <div class="search">
+          <label class="srOnly" for="searchInput">Buscar</label>
+          <input id="searchInput" type="search" placeholder="Buscar (ej: latte, muffin, wrap)..." autocomplete="off" />
+          <button class="iconBtn" id="clearSearch" type="button" aria-label="Limpiar búsqueda">✕</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sections -->
+    <section class="container">
+      <!-- Bebidas calientes -->
+      <article class="section" id="calientes" data-section>
+        <header class="section__header">
+          <h2 class="section__title">Bebidas calientes</h2>
+          <button class="section__toggle" type="button" data-toggle>ABRIR</button>
+        </header>
+
+        <div class="grid" data-panel>
+          <div class="item" data-name="Café espresso" data-tags="cafe espresso caliente">
+            <div class="item__row">
+              <h3 class="item__name">Café espresso</h3>
+              <div class="item__price">$1.500</div>
+            </div>
+          </div>
+
+          <div class="item" data-name="Café americano" data-tags="cafe americano caliente">
+            <div class="item__row">
+              <h3 class="item__name">Café americano</h3>
+              <div class="item__price">$1.800</div>
+            </div>
+          </div>
+
+          <div class="item" data-name="Cappuccino" data-tags="capuccino cappuccino cafe leche caliente">
+            <div class="item__row">
+              <h3 class="item__name">Cappuccino</h3>
+              <div class="item__price">$2.200</div>
+            </div>
+          </div>
+
+          <div class="item" data-name="Latte" data-tags="latte cafe leche caliente">
+            <div class="item__row">
+              <h3 class="item__name">Latte</h3>
+              <div class="item__price">$2.500</div>
+            </div>
+          </div>
+
+          <div class="item" data-name="Flat white" data-tags="flat white cafe leche caliente">
+            <div class="item__row">
+              <h3 class="item__name">Flat white</h3>
+              <div class="item__price">$2.600</div>
+            </div>
+          </div>
+
+          <div class="item" data-name="Té en hebras" data-tags="te en hebras caliente">
+            <div class="item__row">
+              <h3 class="item__name">Té en hebras</h3>
+              <div class="item__price">$1.700</div>
+            </div>
+          </div>
+
+          <div class="item" data-name="Infusión de hierbas" data-tags="infusion hierbas menta manzanilla caliente">
+            <div class="item__row">
+              <h3 class="item__name">Infusión de hierbas <span class="muted">(menta, manzanilla)</span></h3>
+              <div class="item__price">$1.800</div>
+            </div>
+          </div>
+
+          <div class="item" data-name="Chocolate caliente" data-tags="chocolate caliente">
+            <div class="item__row">
+              <h3 class="item__name">Chocolate caliente</h3>
+              <div class="item__price">$2.300</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Bebidas frías -->
+      <article class="section" id="frias" data-section>
+        <header class="section__header">
+          <h2 class="section__title">Bebidas frías</h2>
+          <button class="section__toggle" type="button" data-toggle>ABRIR</button>
+        </header>
+
+        <div class="grid" data-panel>
+          <div class="item" data-name="Café frío (iced coffee)" data-tags="cafe frio iced coffee bebidas frias">
+            <div class="item__row">
+              <h3 class="item__name">Café frío <span class="muted">(iced coffee)</span></h3>
+              <div class="item__price">$2.000</div>
+            </div>
+          </div>
+
+          <div class="item" data-name="Frappé de café" data-tags="frappe cafe frio bebidas frias">
+            <div class="item__row">
+              <h3 class="item__name">Frappé de café</h3>
+              <div class="item__price">$2.800</div>
+            </div>
+          </div>
+
+          <div class="item" data-name="Limonada casera" data-tags="limonada casera bebidas frias">
+            <div class="item__row">
+              <h3 class="item__name">Limonada casera</h3>
+              <div class="item__price">$2.200</div>
+            </div>
+          </div>
+
+          <div class="item" data-name="Smoothie de frutas" data-tags="smoothie frutas bebidas frias">
+            <div class="item__row">
+              <h3 class="item__name">Smoothie de frutas</h3>
+              <div class="item__price">$2.700</div>
+            </div>
+          </div>
+
+          <div class="item" data-name="Té helado" data-tags="te helado limon durazno bebidas frias">
+            <div class="item__row">
+              <h3 class="item__name">Té helado <span class="muted">(limón o durazno)</span></h3>
+              <div class="item__price">$2.000</div>
+            </div>
+          </div>
+
+          <div class="item" data-name="Licuado de banana con leche" data-tags="licuado banana leche bebidas frias">
+            <div class="item__row">
+              <h3 class="item__name">Licuado de banana con leche</h3>
+              <div class="item__price">$2.400</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Pastelería -->
+      <article class="section" id="pasteleria" data-section>
+        <header class="section__header">
+          <h2 class="section__title">Pastelería</h2>
+          <button class="section__toggle" type="button" data-toggle>ABRIR</button>
+        </header>
+
+        <div class="grid" data-panel>
+          <div class="item" data-name="Croissant" data-tags="croissant pasteleria">
+            <div class="item__row">
+              <h3 class="item__name">Croissant</h3>
+              <div class="item__price">$1.800</div>
+            </div>
+          </div>
+
+          <div class="item" data-name="Muffin de chocolate" data-tags="muffin chocolate pasteleria">
+            <div class="item__row">
+              <h3 class="item__name">Muffin de chocolate</h3>
+              <div class="item__price">$2.000</div>
+            </div>
+          </div>
+
+          <div class="item" data-name="Muffin de arándanos" data-tags="muffin arandanos pasteleria">
+            <div class="item__row">
+              <h3 class="item__name">Muffin de arándanos</h3>
+              <div class="item__price">$2.200</div>
+            </div>
+          </div>
+
+          <div class="item" data-name="Tarta de manzana" data-tags="tarta manzana pasteleria">
+            <div class="item__row">
+              <h3 class="item__name">Tarta de manzana</h3>
+              <div class="item__price">$2.500</div>
+            </div>
+          </div>
+
+          <div class="item" data-name="Cheesecake" data-tags="cheesecake pasteleria">
+            <div class="item__row">
+              <h3 class="item__name">Cheesecake</h3>
+              <div class="item__price">$3.000</div>
+            </div>
+          </div>
+
+          <div class="item" data-name="Cookies artesanales (x2)" data-tags="cookies artesanales pasteleria">
+            <div class="item__row">
+              <h3 class="item__name">Cookies artesanales <span class="muted">(x2)</span></h3>
+              <div class="item__price">$1.600</div>
+            </div>
+          </div>
+
+          <div class="item" data-name="Brownie" data-tags="brownie pasteleria">
+            <div class="item__row">
+              <h3 class="item__name">Brownie</h3>
+              <div class="item__price">$2.400</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Opciones saladas -->
+      <article class="section" id="saladas" data-section>
+        <header class="section__header">
+          <h2 class="section__title">Opciones saladas</h2>
+          <button class="section__toggle" type="button" data-toggle>ABRIR</button>
+        </header>
+
+        <div class="grid" data-panel>
+          <div class="item" data-name="Tostado de jamón y queso" data-tags="tostado jamon queso salado">
+            <div class="item__row">
+              <h3 class="item__name">Tostado de jamón y queso</h3>
+              <div class="item__price">$2.800</div>
+            </div>
+          </div>
+
+          <div class="item" data-name="Sandwich veggie" data-tags="sandwich veggie palta tomate rucula salado">
+            <div class="item__row">
+              <h3 class="item__name">Sandwich veggie <span class="muted">(palta, tomate, rúcula)</span></h3>
+              <div class="item__price">$3.200</div>
+            </div>
+          </div>
+
+          <div class="item" data-name="Focaccia con aceitunas" data-tags="focaccia aceitunas salado">
+            <div class="item__row">
+              <h3 class="item__name">Focaccia con aceitunas</h3>
+              <div class="item__price">$2.500</div>
+            </div>
+          </div>
+
+          <div class="item" data-name="Bagel con salmón y queso crema" data-tags="bagel salmon queso crema salado">
+            <div class="item__row">
+              <h3 class="item__name">Bagel con salmón y queso crema</h3>
+              <div class="item__price">$3.800</div>
+            </div>
+          </div>
+
+          <div class="item" data-name="Wrap de pollo y vegetales" data-tags="wrap pollo vegetales salado">
+            <div class="item__row">
+              <h3 class="item__name">Wrap de pollo y vegetales</h3>
+              <div class="item__price">$3.500</div>
+            </div>
+          </div>
+
+          <div class="item" data-name="Empanada casera" data-tags="empanada carne pollo caprese salado">
+            <div class="item__row">
+              <h3 class="item__name">Empanada casera <span class="muted">(carne, pollo o caprese)</span></h3>
+              <div class="item__price">$1.800</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Extras y combos -->
+      <article class="section" id="extras" data-section>
+        <header class="section__header">
+          <h2 class="section__title">Extras y combos</h2>
+          <button class="section__toggle" type="button" data-toggle>ABRIR</button>
+        </header>
+
+        <div class="grid" data-panel>
+          <div class="item item--featured" data-name="Combo desayuno" data-tags="combo desayuno cafe croissant">
+            <div class="item__row">
+              <h3 class="item__name">Combo desayuno <span class="muted">Café + Croissant</span></h3>
+              <div class="item__price">$3.000</div>
+            </div>
+            <p class="item__hint">Ideal para arrancar el día.</p>
+          </div>
+
+          <div class="item item--featured" data-name="Combo merienda" data-tags="combo merienda latte muffin">
+            <div class="item__row">
+              <h3 class="item__name">Combo merienda <span class="muted">Latte + Muffin</span></h3>
+              <div class="item__price">$4.200</div>
+            </div>
+            <p class="item__hint">El más pedido.</p>
+          </div>
+
+          <div class="item" data-name="Extra leche vegetal" data-tags="extra leche vegetal almendra avena soja">
+            <div class="item__row">
+              <h3 class="item__name">Extra leche vegetal <span class="muted">(almendra, avena, soja)</span></h3>
+              <div class="item__price">+$400</div>
+            </div>
+          </div>
+
+          <div class="item" data-name="Extra sabor" data-tags="extra sabor vainilla caramelo avellana">
+            <div class="item__row">
+              <h3 class="item__name">Extra sabor <span class="muted">(vainilla, caramelo, avellana)</span></h3>
+              <div class="item__price">+$300</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Empty search state -->
+      <div class="empty" id="emptyState" hidden>
+        <h3>No encontré resultados</h3>
+        <p>Probá con otra palabra (ej: “café”, “muffin”, “wrap”).</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p class="footer__line">
+        <span class="footer__dot" aria-hidden="true"></span>
+        <span>Escaneaste el QR — este menú se actualiza fácil sin reimprimir.</span>
+      </p>
+      <p class="footer__tiny">© Café — Menú virtual</p>
+    </footer>
+  </main>
+
+  <!-- Back to top -->
+  <button class="toTop" id="toTop" type="button" aria-label="Volver arriba">↑</button>
+
+  <script src="app.js"></script>
+</body>
+</html>

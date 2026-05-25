@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menú QR Café</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="top-grid" id="inicio">
+      <section class="stamp-box brand-box">
+        <div class="eyebrow" id="brandName">CAFÉ   </div>
+        <h1 class="mega-title">MENÚ</h1>
+      </section>
+
+      <section class="stamp-box dark-box">
+        <div class="open-title">OPEN</div>
+        <div class="hours" id="openHours">8AM<br />TO 9PM</div>
+      </section>
+    </header>
+
+    <nav class="toolbar" aria-label="Filtros del menú">
+      <div class="toolbar-top">
+        <input class="search" id="searchInput" type="search" placeholder="Buscar café, latte, brownie..." />
+        <button class="cart-open" id="openCart" type="button">Pedido <span id="cartCount">0</span></button>
+      </div>
+      <div class="category-nav" id="categoryNav"></div>
+    </nav>
+
+    <main class="layout" id="menuGrid"></main>
+
+    <footer class="footer">
+      <div>
+        <h2>SEGUINOS EN INSTAGRAM</h2>
+        <p>Promos, novedades y pedidos por mensaje directo.</p>
+      </div>
+      <a class="insta-link" id="instagramLink" href="#" target="_blank" rel="noopener">@tu_cafeteria</a>
+    </footer>
+  </div>
+
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Pedido">
+    <div class="cart-head">
+      <h2>Tu pedido</h2>
+      <button class="close-cart" id="closeCart" type="button" aria-label="Cerrar pedido">×</button>
+    </div>
+
+    <div class="cart-body">
+      <div class="cart-list" id="cartList"></div>
+    </div>
+
+    <div class="cart-total">
+      <div class="total-line">
+        <span>Total estimado</span>
+        <strong id="cartTotal">$0</strong>
+      </div>
+      <div class="order-actions">
+        <button class="action-btn" id="clearCart" type="button">Vaciar</button>
+        <button class="action-btn primary" id="sendOrder" type="button">Copiar y abrir Insta</button>
+      </div>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast">Pedido copiado. Abrí Instagram y pegalo por DM.</div>
+
+  <script src="menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Retro Diner Café - Menú QR</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Fredoka:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <main class="page">
+
+    <section class="menu-board">
+
+      <header class="hero">
+        <div class="logo-sign">
+          <span>Retro</span>
+          <h1>Dinner Café</h1>
+          <p>Restaurant · Coffee · Bakery</p>
+        </div>
+
+        <div class="hero-lines left-lines"></div>
+        <div class="hero-lines right-lines"></div>
+      </header>
+
+      <section class="info-bar">
+        <div>
+          <strong>OPEN</strong>
+          <span>Lunes a domingo · 08:00 — 20:00</span>
+        </div>
+
+        <div>
+          <strong>VISIT US</strong>
+          <span>123 Main Street · Buenos Aires</span>
+        </div>
+
+        <div>
+          <strong>DELIVERY</strong>
+          <span>Pedidos por WhatsApp</span>
+        </div>
+      </section>
+
+      <section class="controls">
+        <div class="search-box">
+          <label for="searchInput">Buscar en el menú</label>
+          <input id="searchInput" type="text" placeholder="Ej: latte, brownie, espresso..." />
+        </div>
+
+        <div class="category-tabs" id="categoryTabs"></div>
+      </section>
+
+      <section class="menu-grid" id="menuGrid"></section>
+
+      <section class="order-panel">
+        <div>
+          <p>Tu selección</p>
+          <h2 id="orderCount">0 productos</h2>
+        </div>
+
+        <div class="order-actions">
+          <strong id="orderTotal">$0</strong>
+          <button id="clearOrderBtn" type="button">Limpiar</button>
+        </div>
+      </section>
+
+      <section class="selected-list" id="selectedList"></section>
+
+      <section class="instagram-card">
+        <p>SEGUINOS EN INSTAGRAM</p>
+        <h2>@retrodinercafe</h2>
+        <span>Promos, novedades y cafecitos del día.</span>
+      </section>
+
+    </section>
+
+  </main>
+
+  <script src="menu.js"></script>
+</body>
+</html>
